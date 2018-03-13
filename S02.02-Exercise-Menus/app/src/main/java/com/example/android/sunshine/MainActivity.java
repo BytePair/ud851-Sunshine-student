@@ -28,9 +28,12 @@ import com.example.android.sunshine.utilities.OpenWeatherJsonUtils;
 
 import java.net.URL;
 
+
 public class MainActivity extends AppCompatActivity {
 
+
     private TextView mWeatherTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         loadWeatherData();
     }
 
+
     /**
      * This method will get the user's preferred location for weather, and then tell some
      * background method to get the weather data in the background.
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         String location = SunshinePreferences.getPreferredWeatherLocation(this);
         new FetchWeatherTask().execute(location);
     }
+
 
     public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
 
@@ -100,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     // Override onCreateOptionsMenu to inflate the menu for this Activity
     // Return true to display the menu
     @Override
@@ -108,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.forecast, menu);
         return true;
     }
+
 
     // Override onOptionsItemSelected to handle clicks on the refresh button
     @Override
@@ -119,4 +124,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
