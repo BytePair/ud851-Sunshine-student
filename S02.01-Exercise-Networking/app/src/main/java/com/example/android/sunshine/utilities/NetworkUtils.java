@@ -119,4 +119,5 @@ public final class NetworkUtils {
             urlConnection.disconnect();
         }
     }
+
 }

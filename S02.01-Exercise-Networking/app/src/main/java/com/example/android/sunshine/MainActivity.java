@@ -58,16 +58,13 @@ public class MainActivity extends AppCompatActivity {
         // override the doInBackground method to perform your network requests
         @Override
         protected String doInBackground(URL... params) {
-            StringBuilder result = new StringBuilder();
-            for (URL url : params) {
-                try {
-                    result.append(NetworkUtils.getResponseFromHttpUrl(url));
-                } catch (IOException e) {
-                    Log.v(TAG, e.getMessage());
-                }
-
+            String result = null;
+            try {
+                result = NetworkUtils.getResponseFromHttpUrl(params[0]);
+            } catch (IOException e) {
+                Log.v(TAG, e.getMessage());
             }
-            return result.toString();
+            return result;
         }
 
         // override the onPostExecute method to display the results of the network request
