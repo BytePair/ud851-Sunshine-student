@@ -30,6 +30,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.sunshine.ForecastAdapter.ForecastAdapterOnClickHandler;
 import com.example.android.sunshine.data.SunshinePreferences;
@@ -221,7 +222,20 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
             return true;
         }
 
-        // TODO (2) Launch the map when the map menu item is clicked
+        // 2. Launch the map when the map menu item is clicked
+        if (id == R.id.action_show_map) {
+
+            Uri uri = Uri.parse("geo:0,0?q=" + SunshinePreferences.getPreferredWeatherLocation(this));
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(uri);
+
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
