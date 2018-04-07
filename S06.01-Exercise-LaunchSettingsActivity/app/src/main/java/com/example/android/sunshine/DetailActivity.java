@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -55,5 +56,17 @@ public class DetailActivity extends AppCompatActivity {
         return true;
     }
 
-    // TODO (7) Launch SettingsActivity when the Settings option is clicked
+    // Done (7) Launch SettingsActivity when the Settings option is clicked
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Integer itemId = item.getItemId();
+        if (itemId == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
