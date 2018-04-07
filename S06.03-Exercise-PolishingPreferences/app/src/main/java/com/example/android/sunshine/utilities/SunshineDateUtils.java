@@ -38,7 +38,6 @@ public final class SunshineDateUtils {
      * in UTC time from the current date.
      *
      * @param date A date in milliseconds in local time.
-     *
      * @return The number of days in UTC time from the epoch.
      */
     public static long getDayNumber(long date) {
@@ -52,7 +51,6 @@ public final class SunshineDateUtils {
      * the database to the start of the day in UTC time.
      *
      * @param date The UTC date to normalize
-     *
      * @return The UTC date at 12 midnight
      */
     public static long normalizeDate(long date) {
@@ -102,7 +100,6 @@ public final class SunshineDateUtils {
      * @param dateInMillis The date in milliseconds (UTC)
      * @param showFullDate Used to show a fuller-version of the date, which always contains either
      *                     the day of the week, today, or tomorrow, in addition to the date.
-     *
      * @return A user-friendly representation of the date such as "Today, June 8", "Tomorrow",
      * or "Friday"
      */
@@ -154,7 +151,6 @@ public final class SunshineDateUtils {
      *
      * @param context      Used by DateUtils to formate the date in the current locale
      * @param timeInMillis Time in milliseconds since the epoch (local time)
-     *
      * @return The formatted date string
      */
     private static String getReadableDateString(Context context, long timeInMillis) {
@@ -167,11 +163,10 @@ public final class SunshineDateUtils {
 
     /**
      * Given a day, returns just the name to use for that day.
-     *   E.g "today", "tomorrow", "Wednesday".
+     * E.g "today", "tomorrow", "Wednesday".
      *
      * @param context      Context to use for resource localization
      * @param dateInMillis The date in milliseconds (local time)
-     *
      * @return the string day of the week
      */
     private static String getDayName(Context context, long dateInMillis) {
