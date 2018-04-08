@@ -15,6 +15,7 @@
  */
 package com.example.android.sunshine;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -258,20 +259,20 @@ public class MainActivity extends AppCompatActivity implements
         mForecastAdapter.swapCursor(null);
     }
 
-    //  TODO (38) Refactor onClick to accept a long instead of a String as its parameter
+    // COMPLETE (38) Refactor onClick to accept a long instead of a String as its parameter
     /**
      * This method is for responding to clicks from our list.
      *
-     * @param weatherForDay String describing weather details for a particular day
+     * @param weatherDate long describing weather details for a particular day
      */
     @Override
-    public void onClick(String weatherForDay) {
-//      TODO (39) Refactor onClick to build a URI for the clicked date and and pass it with the Intent using setData
-        Context context = this;
-        Class destinationClass = DetailActivity.class;
-        Intent intentToStartDetailActivity = new Intent(context, destinationClass);
-        intentToStartDetailActivity.putExtra(Intent.EXTRA_TEXT, weatherForDay);
-        startActivity(intentToStartDetailActivity);
+    public void onClick(long weatherDate) {
+        // COMPLETE (39) Refactor onClick to build a URI for the clicked date and and pass it with the Intent using setData
+        Uri uri = WeatherContract.WeatherEntry.buildWeatherUriWithDate(weatherDate);
+        Intent viewDetailsIntent = new Intent(MainActivity.this, DetailActivity.class);
+
+        viewDetailsIntent.setData(uri);
+        startActivity(viewDetailsIntent);
     }
 
     /**
