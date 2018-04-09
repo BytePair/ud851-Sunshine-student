@@ -14,7 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
@@ -23,6 +23,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!-- Used for settings preference theme -->
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <style name="base_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:background">@color/white</item>
     </style>
 
 </resources>
