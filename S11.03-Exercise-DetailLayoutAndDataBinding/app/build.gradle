@@ -18,11 +18,15 @@ android {
         }
     }
 
-//  TODO (1) Enable databinding
+    // COMPLETED (1) Enable databinding
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:25.1.0'
 
     compile 'com.android.support:recyclerview-v7:25.0.1'
