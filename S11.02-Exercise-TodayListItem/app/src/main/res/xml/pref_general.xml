@@ -39,4 +39,11 @@
         android:summaryOn="@string/pref_enable_notifications_true"
         android:title="@string/pref_enable_notifications_label" />
 
+    <CheckBoxPreference
+        android:defaultValue="@bool/use_today_layout"
+        android:key="@string/today_layout_key"
+        android:summaryOff="Normal Layout"
+        android:summaryOn="Enhance Today's Layout"
+        android:title="Custom Layout" />
+
 </PreferenceScreen>
